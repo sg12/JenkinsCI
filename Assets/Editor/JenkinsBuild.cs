@@ -22,6 +22,17 @@ public class JenkinsBuild
     // ------------------------------------------------------------------------
     // called from Jenkins
     // ------------------------------------------------------------------------
+    public static void BuildiOS()
+    {
+        var args = FindArgs();
+
+        string fullPathAndName = args.targetDir + args.appName;
+        BuildProject(EnabledScenes, fullPathAndName, BuildTargetGroup.iOS, BuildTarget.iOS, BuildOptions.None);
+    }
+
+    // ------------------------------------------------------------------------
+    // called from Jenkins
+    // ------------------------------------------------------------------------
     public static void BuildWindows64()
     {
         var args = FindArgs();
